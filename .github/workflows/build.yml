@@ -68,5 +68,9 @@ jobs:
           name: jacoco-report
           path: target/site/jacoco/
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@v1
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: target/site/jacoco/jacoco.xml
+          name: codecov
