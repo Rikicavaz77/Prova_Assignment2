@@ -76,4 +76,4 @@ jobs:
           name: codecov
 
       - name: Coveralls
-        uses: coverallsapp/github-action@v1
+        run: mvn -B coveralls:report --define repoToken=${{ secrets.COVERALLS_TOKEN }}
