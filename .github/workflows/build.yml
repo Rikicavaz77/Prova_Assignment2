@@ -74,3 +74,6 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: target/site/jacoco/jacoco.xml
           name: codecov
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@v1
