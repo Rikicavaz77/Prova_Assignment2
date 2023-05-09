@@ -12,15 +12,21 @@ public class IntegerToRoman
   public static String convert(int number) throws RomanNumberException {
     if (number < 0) 
     {
-      throw new RomanNumberException("I numeri negativi non sono convertibili in numero romano");
+      throw new RomanNumberException(
+        "Negative numbers are not convertible into Roman ones"
+      );
     }
     if (number == 0) 
     {
-      throw new RomanNumberException("Lo 0 non è convertibile in numero romano");
+      throw new RomanNumberException(
+        "0 is not convertible into a Roman numeral"
+      );
     }
     if (number >= 4000) 
     {
-      throw new RomanNumberException("Con i simboli I, V, X, L, C, D e M si possono rappresentare solo i numeri da 1 a 3999");
+      throw new RomanNumberException(
+        "With I, V, X, L, C, D and M you can only represent numbers from 1 to 3999"
+      );
     }
     return null;
   }

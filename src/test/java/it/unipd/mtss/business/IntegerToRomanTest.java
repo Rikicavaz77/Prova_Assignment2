@@ -15,7 +15,7 @@ public class IntegerToRomanTest {
     @Test
     public void testConvert_WithNegativeNumberAsInput() throws RomanNumberException {
         thrown.expect(RomanNumberException.class);
-		thrown.expectMessage("I numeri negativi non sono convertibili in numero romano");
+		thrown.expectMessage("Negative numbers are not convertible into Roman ones");
 
         IntegerToRoman.convert(-1);
     }
@@ -23,7 +23,7 @@ public class IntegerToRomanTest {
     @Test
     public void testConvert_With0AsInput() throws RomanNumberException {
         thrown.expect(RomanNumberException.class);
-		thrown.expectMessage("Lo 0 non è convertibile in numero romano");
+		thrown.expectMessage("0 is not convertible into a Roman numeral");
 
         IntegerToRoman.convert(0);
     }
@@ -31,7 +31,9 @@ public class IntegerToRomanTest {
     @Test
     public void testConvert_WithMoreThan3999AsInput() throws RomanNumberException {
         thrown.expect(RomanNumberException.class);
-		thrown.expectMessage("Con i simboli I, V, X, L, C, D e M si possono rappresentare solo i numeri da 1 a 3999");
+		thrown.expectMessage(
+            "With I, V, X, L, C, D and M you can only represent numbers from 1 to 3999"
+        );
 
         IntegerToRoman.convert(4000);
     }
