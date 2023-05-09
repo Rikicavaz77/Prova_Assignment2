@@ -31,9 +31,7 @@ public class IntegerToRomanTest {
     @Test
     public void testConvert_WithMoreThan3999AsInput() throws RomanNumberException {
         thrown.expect(RomanNumberException.class);
-		thrown.expectMessage(
-            "With I, V, X, L, C, D and M you can only represent numbers from 1 to 3999"
-        );
+		thrown.expectMessage("I, V, X, L, C, D and M only support numbers from 1 to 3999");
 
         IntegerToRoman.convert(4000);
     }

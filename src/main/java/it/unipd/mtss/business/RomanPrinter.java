@@ -8,10 +8,12 @@ package it.unipd.mtss.business;
 import it.unipd.mtss.business.exceptions.RomanNumberException;
 
 public class RomanPrinter {
-  public static String print(int num) throws RomanNumberException {
-  return printAsciiArt(IntegerToRoman.convert(num));
+  public static String print(int num) 
+      throws RomanNumberException {
+    return printAsciiArt(IntegerToRoman.convert(num));
   }
-  private static String printAsciiArt(String romanNumber) throws RomanNumberException {
-  return null;
+  private static String printAsciiArt(String romanNumber) 
+      throws RomanNumberException {
+    return null;
   }
 }

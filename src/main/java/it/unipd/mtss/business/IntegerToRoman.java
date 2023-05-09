@@ -25,7 +25,7 @@ public class IntegerToRoman
     if (number >= 4000) 
     {
       throw new RomanNumberException(
-        "With I, V, X, L, C, D and M you can only represent numbers from 1 to 3999"
+        "I, V, X, L, C, D and M only support numbers from 1 to 3999"
       );
     }
     return null;
