@@ -8,11 +8,17 @@ import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
+import org.junit.BeforeClass;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 
 public class RomanPrinterTest {
+
+    @BeforeClass 
+    public static void classSetUp() {
+        new RomanPrinter();
+    }
 
     @Test
     public void testPrint_WithNullAsInput() throws NullPointerException, RomanNumberException {

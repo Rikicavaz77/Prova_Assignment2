@@ -6,7 +6,14 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
+import org.junit.BeforeClass;
+
 public class IntegerToRomanTest {
+
+    @BeforeClass 
+    public static void classSetUp() {
+        new IntegerToRoman();
+    }
     
     @Test
     public void testConvert_WithNegativeNumberAsInput() {
