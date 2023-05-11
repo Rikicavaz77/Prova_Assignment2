@@ -74,6 +74,3 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: target/site/jacoco/jacoco.xml
           name: codecov
-
-      - name: Coveralls
-        run: mvn -B coveralls:report --define repoToken=${{ secrets.COVERALLS_TOKEN }}
