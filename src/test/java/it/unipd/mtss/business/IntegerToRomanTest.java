@@ -49,10 +49,44 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvert_WithLegalInput() throws RomanNumberException {
+    public void testConvert_I() throws RomanNumberException {
         
-        assertEquals(null, IntegerToRoman.convert(1));
+        assertEquals("I", IntegerToRoman.convert(1));
     }
-      
 
+    @Test
+    public void testConvert_II() throws RomanNumberException {
+        
+        assertEquals("II", IntegerToRoman.convert(2));
+    }
+
+    @Test
+    public void testConvert_IV() throws RomanNumberException {
+        
+        assertEquals("IV", IntegerToRoman.convert(4));
+    }
+    
+    @Test
+    public void testConvert_V() throws RomanNumberException {
+        
+        assertEquals("V", IntegerToRoman.convert(5));
+    }
+
+    @Test
+    public void testConvert_VI() throws RomanNumberException {
+        
+        assertEquals("VI", IntegerToRoman.convert(6));
+    }
+
+    @Test
+    public void testConvert_IX() throws RomanNumberException {
+        
+        assertEquals("IX", IntegerToRoman.convert(9));
+    }
+
+    @Test
+    public void testConvert_X() throws RomanNumberException {
+        
+        assertEquals("X", IntegerToRoman.convert(10));
+    }
 }
