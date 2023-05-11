@@ -40,6 +40,12 @@ public class IntegerToRomanTest {
             
         assertEquals("I, V, X, L, C, D and M only support numbers from 1 to 3999", exc.getMessage());
     }
+
+    @Test
+    public void testConvert_WithLegalInput() throws RomanNumberException {
+        
+        assertEquals(null, IntegerToRoman.convert(1));
+    }
       
 
 }

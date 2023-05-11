@@ -93,4 +93,15 @@ public class RomanPrinterTest {
             assertEquals("The string contains incompatible characters", exc.getMessage());
         }       
     }
+
+    @Test
+    public void testPrint_WithLegalInput() throws RomanNumberException {
+        
+        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
+            utilities.when(() -> IntegerToRoman.convert(1))
+                .thenReturn("I");
+            
+            assertEquals(null, RomanPrinter.print(1));
+        }       
+    }
 }

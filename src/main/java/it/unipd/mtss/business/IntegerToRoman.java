@@ -28,6 +28,6 @@ public class IntegerToRoman
         "I, V, X, L, C, D and M only support numbers from 1 to 3999"
       );
     }
-    return "";
+    return null;
   }
 }
