@@ -14,8 +14,8 @@ public class IntegerToRoman
 
   public IntegerToRoman()
   {
-    ValuesRange = new int[]{50,40,10,9,5,4,1};  
-    RomanLetters = new String[]{"L","XL","X","IX","V","IV","I"};
+    ValuesRange = new int[]{100,90,50,40,10,9,5,4,1};  
+    RomanLetters = new String[]{"C","XC","L","XL","X","IX","V","IV","I"};
   }
 
   public static String convert(int number) throws RomanNumberException {

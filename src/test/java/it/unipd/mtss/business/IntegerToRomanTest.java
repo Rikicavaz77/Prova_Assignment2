@@ -119,4 +119,34 @@ public class IntegerToRomanTest {
         
         assertEquals("L", IntegerToRoman.convert(50));
     }
+
+    @Test
+    public void testConvert_SixtyTwo() throws RomanNumberException {
+        
+        assertEquals("LXII", IntegerToRoman.convert(62));
+    }
+
+    @Test
+    public void testConvert_EightyNine() throws RomanNumberException {
+        
+        assertEquals("LXXXIX", IntegerToRoman.convert(89));
+    }
+
+    @Test
+    public void testConvert_Ninety() throws RomanNumberException {
+        
+        assertEquals("XC", IntegerToRoman.convert(90));
+    }
+
+    @Test
+    public void testConvert_NinetyNine() throws RomanNumberException {
+        
+        assertEquals("XCIX", IntegerToRoman.convert(99));
+    }
+
+    @Test
+    public void testConvert_Hundred() throws RomanNumberException {
+        
+        assertEquals("C", IntegerToRoman.convert(100));
+    }
 }
