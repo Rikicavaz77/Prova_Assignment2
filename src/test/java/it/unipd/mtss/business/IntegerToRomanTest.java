@@ -167,4 +167,22 @@ public class IntegerToRomanTest {
         
         assertEquals("D", IntegerToRoman.convert(500));
     }
+
+    @Test
+    public void testConvert_EightHundredAndNinetyEight() throws RomanNumberException {
+        
+        assertEquals("DCCCXCVIII", IntegerToRoman.convert(898));
+    }
+
+    @Test
+    public void testConvert_NineHundred() throws RomanNumberException {
+        
+        assertEquals("CM", IntegerToRoman.convert(900));
+    }
+
+    @Test
+    public void testConvert_OneThousand() throws RomanNumberException {
+        
+        assertEquals("M", IntegerToRoman.convert(1000));
+    }
 }
