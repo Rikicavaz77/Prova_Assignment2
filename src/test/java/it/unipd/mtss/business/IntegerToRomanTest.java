@@ -149,4 +149,22 @@ public class IntegerToRomanTest {
         
         assertEquals("C", IntegerToRoman.convert(100));
     }
+
+    @Test
+    public void testConvert_ThreeHundredAndNinetyNine() throws RomanNumberException {
+        
+        assertEquals("CCCXCIX", IntegerToRoman.convert(399));
+    }
+
+    @Test
+    public void testConvert_FourHundred() throws RomanNumberException {
+        
+        assertEquals("CD", IntegerToRoman.convert(400));
+    }
+
+    @Test
+    public void testConvert_FiveHundred() throws RomanNumberException {
+        
+        assertEquals("D", IntegerToRoman.convert(500));
+    }
 }
