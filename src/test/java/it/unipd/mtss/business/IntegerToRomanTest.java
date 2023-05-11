@@ -49,44 +49,74 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvert_I() throws RomanNumberException {
+    public void testConvert_One() throws RomanNumberException {
         
         assertEquals("I", IntegerToRoman.convert(1));
     }
 
     @Test
-    public void testConvert_II() throws RomanNumberException {
+    public void testConvert_Two() throws RomanNumberException {
         
         assertEquals("II", IntegerToRoman.convert(2));
     }
 
     @Test
-    public void testConvert_IV() throws RomanNumberException {
+    public void testConvert_Four() throws RomanNumberException {
         
         assertEquals("IV", IntegerToRoman.convert(4));
     }
     
     @Test
-    public void testConvert_V() throws RomanNumberException {
+    public void testConvert_Five() throws RomanNumberException {
         
         assertEquals("V", IntegerToRoman.convert(5));
     }
 
     @Test
-    public void testConvert_VI() throws RomanNumberException {
+    public void testConvert_Six() throws RomanNumberException {
         
         assertEquals("VI", IntegerToRoman.convert(6));
     }
 
     @Test
-    public void testConvert_IX() throws RomanNumberException {
+    public void testConvert_Nine() throws RomanNumberException {
         
         assertEquals("IX", IntegerToRoman.convert(9));
     }
 
     @Test
-    public void testConvert_X() throws RomanNumberException {
+    public void testConvert_Ten() throws RomanNumberException {
         
         assertEquals("X", IntegerToRoman.convert(10));
+    }
+
+    @Test
+    public void testConvert_Fourteen() throws RomanNumberException {
+        
+        assertEquals("XIV", IntegerToRoman.convert(14));
+    }
+
+    @Test
+    public void testConvert_Thirtynine() throws RomanNumberException {
+        
+        assertEquals("XXXIX", IntegerToRoman.convert(39));
+    }
+
+    @Test
+    public void testConvert_Forty() throws RomanNumberException {
+        
+        assertEquals("XL", IntegerToRoman.convert(40));
+    }
+
+    @Test
+    public void testConvert_FourtyOne() throws RomanNumberException {
+        
+        assertEquals("XLI", IntegerToRoman.convert(41));
+    }
+
+    @Test
+    public void testConvert_Fifty() throws RomanNumberException {
+        
+        assertEquals("L", IntegerToRoman.convert(50));
     }
 }
