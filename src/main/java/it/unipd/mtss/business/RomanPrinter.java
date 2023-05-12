@@ -85,9 +85,15 @@ public class RomanPrinter {
       {
         RomanAsciArt += matrice[i][array[(romanNumber.charAt(j))]];
 
-        if (j + 1 != romanNumber.length()) RomanAsciArt += " ";
+        if (j + 1 != romanNumber.length())
+        {
+          RomanAsciArt += " ";
+        }
       }
-      if (i + 1 != 6) RomanAsciArt += "\n";
+      if (i + 1 != 6)
+      {
+        RomanAsciArt += "\n";
+      }
     }
     return RomanAsciArt;
   }
