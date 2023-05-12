@@ -17,7 +17,7 @@ public class RomanPrinter {
   public RomanPrinter()
   {
     array = new int[100];
-    matrice = new String[6][7];
+    matrice = new String[6][5];
 
     array[73] = 0;
     matrice[0][0] = " _____ "; 
@@ -50,6 +50,14 @@ public class RomanPrinter {
     matrice[3][3] = "| |     ";
     matrice[4][3] = "| |____ ";
     matrice[5][3] = "|______|";
+
+    array[67] = 4;
+    matrice[0][4] = "  _____ "; 
+    matrice[1][4] = " / ____|";
+    matrice[2][4] = "| |     ";
+    matrice[3][4] = "| |     ";
+    matrice[4][4] = "| |____ ";
+    matrice[5][4] = " \\_____|";
   }
 
   public static String print(int num) 
