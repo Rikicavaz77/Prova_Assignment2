@@ -42,6 +42,14 @@ public class RomanPrinter {
     matrice[3][2] = "  > <  "; 
     matrice[4][2] = " / . \\ "; 
     matrice[5][2] = "/_/ \\_\\";
+
+    array[76] = 3;
+    matrice[0][3] = " _      "; 
+    matrice[1][3] = "| |     ";
+    matrice[2][3] = "| |     ";
+    matrice[3][3] = "| |     ";
+    matrice[4][3] = "| |____ ";
+    matrice[5][3] = "|______|";
   }
 
   public static String print(int num) 
