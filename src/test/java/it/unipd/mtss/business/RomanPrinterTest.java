@@ -230,4 +230,61 @@ public class RomanPrinterTest {
             );
         }
     }  
+
+    @Test
+    public void testPrint_Thirtynine() throws RomanNumberException {
+        
+        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
+            utilities.when(() -> IntegerToRoman.convert(39))
+                .thenReturn("XXXIX");
+
+            assertEquals(
+                "__   __ __   __ __   __  _____  __   __\n" +
+                "\\ \\ / / \\ \\ / / \\ \\ / / |_   _| \\ \\ / /\n" +
+                " \\ V /   \\ V /   \\ V /    | |    \\ V / \n" +
+                "  > <     > <     > <     | |     > <  \n" +
+                " / . \\   / . \\   / . \\   _| |_   / . \\ \n" +
+                "/_/ \\_\\ /_/ \\_\\ /_/ \\_\\ |_____| /_/ \\_\\", 
+                RomanPrinter.print(39)
+            );
+        }
+    }
+
+    @Test
+    public void testPrint_FourtyOne() throws RomanNumberException {
+        
+        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
+            utilities.when(() -> IntegerToRoman.convert(41))
+                .thenReturn("XLI");
+
+            assertEquals(
+                "__   __  _        _____ \n" +
+                "\\ \\ / / | |      |_   _|\n" +
+                " \\ V /  | |        | |  \n" +
+                "  > <   | |        | |  \n" +
+                " / . \\  | |____   _| |_ \n" +
+                "/_/ \\_\\ |______| |_____|", 
+                RomanPrinter.print(41)
+            );
+        }
+    }
+
+    @Test
+    public void testConvert_Fifty() throws RomanNumberException {
+        
+        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
+            utilities.when(() -> IntegerToRoman.convert(50))
+                .thenReturn("L");
+
+            assertEquals(
+                " _      \n" +
+                "| |     \n" +
+                "| |     \n" +
+                "| |     \n" +
+                "| |____ \n" +
+                "|______|", 
+                RomanPrinter.print(50)
+            );
+        }
+    }
 }
