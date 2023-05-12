@@ -11,8 +11,38 @@ import java.util.Objects;
 
 public class RomanPrinter {
 
-  static int array[] = new int[100];
-  static String matrice[][] = new String[7][7];
+  static int array[];
+  static String matrice[][];
+
+  public RomanPrinter()
+  {
+    array = new int[100];
+    matrice = new String[6][7];
+
+    array[73] = 0;
+    matrice[0][0] = " _____ "; 
+    matrice[1][0] = "|_   _|";  
+    matrice[2][0] = "  | |  "; 
+    matrice[3][0] = "  | |  ";
+    matrice[4][0] = " _| |_ "; 
+    matrice[5][0] = "|_____|"; 
+
+    array[86] = 1;
+    matrice[0][1] = "__      __"; 
+    matrice[1][1] = "\\ \\    / /";
+    matrice[2][1] = " \\ \\  / / "; 
+    matrice[3][1] = "  \\ \\/ /  "; 
+    matrice[4][1] = "   \\  /   "; 
+    matrice[5][1] = "    \\/    ";
+
+    array[88] = 2;
+    matrice[0][2] = "__   __"; 
+    matrice[1][2] = "\\ \\ / /";
+    matrice[2][2] = " \\ V / "; 
+    matrice[3][2] = "  > <  "; 
+    matrice[4][2] = " / . \\ "; 
+    matrice[5][2] = "/_/ \\_\\";
+  }
 
   public static String print(int num) 
   throws RomanNumberException {
@@ -46,6 +76,25 @@ public class RomanPrinter {
         "The string contains incompatible characters"
       );
     }
-    return null;
+
+    String RomanAsciArt = "";
+
+    for (int i = 0; i < 6; i++)
+    {
+      for (int j = 0; j < romanNumber.length(); j++)
+      {
+        RomanAsciArt += matrice[i][array[(romanNumber.charAt(j))]];
+
+        if (j + 1 != romanNumber.length())
+        {
+          RomanAsciArt += " ";
+        }
+      }
+      if (i + 1 != 6)
+      {
+        RomanAsciArt += "\n";
+      }
+    }
+    return RomanAsciArt;
   }
 }
