@@ -9,8 +9,8 @@ import it.unipd.mtss.business.exceptions.RomanNumberException;
 
 public class IntegerToRoman 
 {
-  static int[] ValuesRange;
-  static String[] RomanLetters;
+  static int ValuesRange[];
+  static String RomanLetters[];
 
   public IntegerToRoman()
   {
