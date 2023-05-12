@@ -99,287 +99,282 @@ public class RomanPrinterTest {
     }
 
     @Test
-    public void testPrint_One() throws RomanNumberException {
+    public void testPrint_One() {
 
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(1))
-                .thenReturn("I");
-
-            assertEquals(
-                " _____ \n" +
-                "|_   _|\n" +
-                "  | |  \n" +
-                "  | |  \n" +
-                " _| |_ \n" +
-                "|_____|", 
-                RomanPrinter.print(1)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "I",
+            " _____ \n" +
+            "|_   _|\n" +
+            "  | |  \n" +
+            "  | |  \n" +
+            " _| |_ \n" +
+            "|_____|", 
+            1
+        );
     }  
     
     @Test
-    public void testPrint_Two() throws RomanNumberException {
+    public void testPrint_Two() {
 
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(2))
-                .thenReturn("II");
-
-            assertEquals(
-                " _____   _____ \n" +
-                "|_   _| |_   _|\n" +
-                "  | |     | |  \n" +
-                "  | |     | |  \n" +
-                " _| |_   _| |_ \n" +
-                "|_____| |_____|", 
-                RomanPrinter.print(2)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "II",
+            " _____   _____ \n" +
+            "|_   _| |_   _|\n" +
+            "  | |     | |  \n" +
+            "  | |     | |  \n" +
+            " _| |_   _| |_ \n" +
+            "|_____| |_____|", 
+            2
+        );
     }
 
     @Test
-    public void testPrint_Four() throws RomanNumberException {
+    public void testPrint_Four() {
 
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(4))
-                .thenReturn("IV");
-
-            assertEquals(
-                " _____  __      __\n" +
-                "|_   _| \\ \\    / /\n" +
-                "  | |    \\ \\  / / \n" +
-                "  | |     \\ \\/ /  \n" +
-                " _| |_     \\  /   \n" +
-                "|_____|     \\/    ", 
-                RomanPrinter.print(4)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "IV",
+            " _____  __      __\n" +
+            "|_   _| \\ \\    / /\n" +
+            "  | |    \\ \\  / / \n" +
+            "  | |     \\ \\/ /  \n" +
+            " _| |_     \\  /   \n" +
+            "|_____|     \\/    ", 
+            4
+        );
     }
 
     @Test
-    public void testPrint_Five() throws RomanNumberException {
+    public void testPrint_Five() {
 
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(5))
-                .thenReturn("V");
-
-            assertEquals(
-                "__      __\n" +
-                "\\ \\    / /\n" +
-                " \\ \\  / / \n" +
-                "  \\ \\/ /  \n" +
-                "   \\  /   \n" +
-                "    \\/    ", 
-                RomanPrinter.print(5)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "V",
+            "__      __\n" +
+            "\\ \\    / /\n" +
+            " \\ \\  / / \n" +
+            "  \\ \\/ /  \n" +
+            "   \\  /   \n" +
+            "    \\/    ", 
+            5
+        );
     }
 
     @Test
-    public void testPrint_Six() throws RomanNumberException {
+    public void testPrint_Six() {
 
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(6))
-                .thenReturn("VI");
-
-            assertEquals(
-                "__      __  _____ \n" +
-                "\\ \\    / / |_   _|\n" +
-                " \\ \\  / /    | |  \n" +
-                "  \\ \\/ /     | |  \n" +
-                "   \\  /     _| |_ \n" +
-                "    \\/     |_____|", 
-                RomanPrinter.print(6)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "VI",
+            "__      __  _____ \n" +
+            "\\ \\    / / |_   _|\n" +
+            " \\ \\  / /    | |  \n" +
+            "  \\ \\/ /     | |  \n" +
+            "   \\  /     _| |_ \n" +
+            "    \\/     |_____|", 
+            6
+        );
     }
 
     @Test
-    public void testPrint_Nine() throws RomanNumberException {
-
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(9))
-                .thenReturn("IX");
-
-            assertEquals(
-                " _____  __   __\n" +
-                "|_   _| \\ \\ / /\n" +
-                "  | |    \\ V / \n" +
-                "  | |     > <  \n" +
-                " _| |_   / . \\ \n" +
-                "|_____| /_/ \\_\\", 
-                RomanPrinter.print(9)
-            );
-        }
+    public void testPrint_Nine() {
+        
+        assertRomanAsciArtEquals(
+            "IX",
+            " _____  __   __\n" +
+            "|_   _| \\ \\ / /\n" +
+            "  | |    \\ V / \n" +
+            "  | |     > <  \n" +
+            " _| |_   / . \\ \n" +
+            "|_____| /_/ \\_\\", 
+            9
+        );
     } 
     
     @Test
-    public void testPrint_Ten() throws RomanNumberException {
+    public void testPrint_Ten(){
 
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(10))
-                .thenReturn("X");
-
-            assertEquals(
-                "__   __\n" +
-                "\\ \\ / /\n" +
-                " \\ V / \n" +
-                "  > <  \n" +
-                " / . \\ \n" +
-                "/_/ \\_\\", 
-                RomanPrinter.print(10)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "X",
+            "__   __\n" +
+            "\\ \\ / /\n" +
+            " \\ V / \n" +
+            "  > <  \n" +
+            " / . \\ \n" +
+            "/_/ \\_\\", 
+            10
+        );
     }  
 
     @Test
-    public void testPrint_Thirtynine() throws RomanNumberException {
-        
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(36))
-                .thenReturn("XXXVI");
+    public void testPrint_ThirtySix() {
 
-            assertEquals(
-                "__   __ __   __ __   __ __      __  _____ \n" +
-                "\\ \\ / / \\ \\ / / \\ \\ / / \\ \\    / / |_   _|\n" +
-                " \\ V /   \\ V /   \\ V /   \\ \\  / /    | |  \n" +
-                "  > <     > <     > <     \\ \\/ /     | |  \n" +
-                " / . \\   / . \\   / . \\     \\  /     _| |_ \n" +
-                "/_/ \\_\\ /_/ \\_\\ /_/ \\_\\     \\/     |_____|", 
-                RomanPrinter.print(36)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "XXXVI",
+            "__   __ __   __ __   __ __      __  _____ \n" +
+            "\\ \\ / / \\ \\ / / \\ \\ / / \\ \\    / / |_   _|\n" +
+            " \\ V /   \\ V /   \\ V /   \\ \\  / /    | |  \n" +
+            "  > <     > <     > <     \\ \\/ /     | |  \n" +
+            " / . \\   / . \\   / . \\     \\  /     _| |_ \n" +
+            "/_/ \\_\\ /_/ \\_\\ /_/ \\_\\     \\/     |_____|", 
+            36
+        );
     }
 
     @Test
-    public void testPrint_FourtyOne() throws RomanNumberException {
-        
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(41))
-                .thenReturn("XLI");
+    public void testPrint_FourtyOne() {
 
-            assertEquals(
-                "__   __  _        _____ \n" +
-                "\\ \\ / / | |      |_   _|\n" +
-                " \\ V /  | |        | |  \n" +
-                "  > <   | |        | |  \n" +
-                " / . \\  | |____   _| |_ \n" +
-                "/_/ \\_\\ |______| |_____|", 
-                RomanPrinter.print(41)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "XLI",
+            "__   __  _        _____ \n" +
+            "\\ \\ / / | |      |_   _|\n" +
+            " \\ V /  | |        | |  \n" +
+            "  > <   | |        | |  \n" +
+            " / . \\  | |____   _| |_ \n" +
+            "/_/ \\_\\ |______| |_____|", 
+            41
+        );
     }
 
     @Test
-    public void testConvert_Fifty() throws RomanNumberException {
-        
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(50))
-                .thenReturn("L");
+    public void testConvert_Fifty() {
 
-            assertEquals(
-                " _      \n" +
-                "| |     \n" +
-                "| |     \n" +
-                "| |     \n" +
-                "| |____ \n" +
-                "|______|", 
-                RomanPrinter.print(50)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "L",
+            " _      \n" +
+            "| |     \n" +
+            "| |     \n" +
+            "| |     \n" +
+            "| |____ \n" +
+            "|______|", 
+            50
+        );
     }
 
     @Test
-    public void testPrint_Ninety() throws RomanNumberException {
+    public void testPrint_Ninety() {
 
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(99))
-                .thenReturn("XCIX");
-
-            assertEquals(
-                "__   __   _____   _____  __   __\n" +
-                "\\ \\ / /  / ____| |_   _| \\ \\ / /\n" +
-                " \\ V /  | |        | |    \\ V / \n" +
-                "  > <   | |        | |     > <  \n" +
-                " / . \\  | |____   _| |_   / . \\ \n" +
-                "/_/ \\_\\  \\_____| |_____| /_/ \\_\\", 
-                RomanPrinter.print(99)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "XCIX",
+            "__   __   _____   _____  __   __\n" +
+            "\\ \\ / /  / ____| |_   _| \\ \\ / /\n" +
+            " \\ V /  | |        | |    \\ V / \n" +
+            "  > <   | |        | |     > <  \n" +
+            " / . \\  | |____   _| |_   / . \\ \n" +
+            "/_/ \\_\\  \\_____| |_____| /_/ \\_\\", 
+            99
+        );
     }  
 
     @Test
-    public void testPrint_Hundred() throws RomanNumberException {
-        
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(100))
-                .thenReturn("C");
+    public void testPrint_Hundred() {
 
-            assertEquals(
-                "  _____ \n" +
-                " / ____|\n" +
-                "| |     \n" +
-                "| |     \n" +
-                "| |____ \n" +
-                " \\_____|", 
-                RomanPrinter.print(100)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "C",
+            "  _____ \n" +
+            " / ____|\n" +
+            "| |     \n" +
+            "| |     \n" +
+            "| |____ \n" +
+            " \\_____|", 
+            100
+        );
     }
 
     @Test
-    public void testPrint_TwoHundred() throws RomanNumberException {
-        
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(200))
-                .thenReturn("CC");
+    public void testPrint_TwoHundred() {
 
-            assertEquals(
-                "  _____    _____ \n" +
-                " / ____|  / ____|\n" +
-                "| |      | |     \n" +
-                "| |      | |     \n" +
-                "| |____  | |____ \n" +
-                " \\_____|  \\_____|", 
-                RomanPrinter.print(200)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "CC",
+            "  _____    _____ \n" +
+            " / ____|  / ____|\n" +
+            "| |      | |     \n" +
+            "| |      | |     \n" +
+            "| |____  | |____ \n" +
+            " \\_____|  \\_____|", 
+            200
+        );
     }
 
     @Test
-    public void testPrint_FourHundred() throws RomanNumberException {
-        
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(400))
-                .thenReturn("CD");
+    public void testPrint_FourHundred() {
 
-            assertEquals(
-                "  _____   _____  \n" +
-                " / ____| |  __ \\ \n" +
-                "| |      | |  | |\n" +
-                "| |      | |  | |\n" +
-                "| |____  | |__| |\n" +
-                " \\_____| |_____/ ", 
-                RomanPrinter.print(400)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "CD",
+            "  _____   _____  \n" +
+            " / ____| |  __ \\ \n" +
+            "| |      | |  | |\n" +
+            "| |      | |  | |\n" +
+            "| |____  | |__| |\n" +
+            " \\_____| |_____/ ", 
+            400
+        );
     }
 
     @Test
-    public void testPrint_FiveHundred() throws RomanNumberException {
-        
-        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
-            utilities.when(() -> IntegerToRoman.convert(500))
-                .thenReturn("D");
+    public void testPrint_FiveHundred() {
 
-            assertEquals(
-                " _____  \n" +
-                "|  __ \\ \n" +
-                "| |  | |\n" +
-                "| |  | |\n" +
-                "| |__| |\n" +
-                "|_____/ ", 
-                RomanPrinter.print(500)
-            );
-        }
+        assertRomanAsciArtEquals(
+            "D",
+            " _____  \n" +
+            "|  __ \\ \n" +
+            "| |  | |\n" +
+            "| |  | |\n" +
+            "| |__| |\n" +
+            "|_____/ ", 
+            500
+        );
+    }
+
+    @Test
+    public void testPrint_FiveHundredAndFourteen() {
+
+        assertRomanAsciArtEquals(
+            "DXIV",
+            " _____   __   __  _____  __      __\n" +
+            "|  __ \\  \\ \\ / / |_   _| \\ \\    / /\n" +
+            "| |  | |  \\ V /    | |    \\ \\  / / \n" +
+            "| |  | |   > <     | |     \\ \\/ /  \n" +
+            "| |__| |  / . \\   _| |_     \\  /   \n" +
+            "|_____/  /_/ \\_\\ |_____|     \\/    ", 
+            514
+        );
+    }
+
+    @Test
+    public void testPrint_NineHundredAndFive() {
+
+        assertRomanAsciArtEquals(
+            "CMV",
+            "  _____   __  __  __      __\n" +
+            " / ____| |  \\/  | \\ \\    / /\n" +
+            "| |      | \\  / |  \\ \\  / / \n" +
+            "| |      | |\\/| |   \\ \\/ /  \n" +
+            "| |____  | |  | |    \\  /   \n" +
+            " \\_____| |_|  |_|     \\/    ", 
+            905
+        );
+    }
+
+    @Test
+    public void testConvert_OneThousand() {
+        
+        assertRomanAsciArtEquals(
+            "M",
+            " __  __ \n" +
+            "|  \\/  |\n" +
+            "| \\  / |\n" +
+            "| |\\/| |\n" +
+            "| |  | |\n" +
+            "|_|  |_|", 
+            1000
+        );
+    }
+
+    private static void assertRomanAsciArtEquals(String roman, String asciart, int number) 
+    {
+        try (MockedStatic<IntegerToRoman> utilities = Mockito.mockStatic(IntegerToRoman.class)) {
+            utilities.when(() -> IntegerToRoman.convert(number))
+                .thenReturn(roman);
+
+            assertEquals(asciart, RomanPrinter.print(number));
+        } catch (RomanNumberException e) {};
     }
 }
